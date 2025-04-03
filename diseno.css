@@ -1,0 +1,62 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1b1b1b;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #52ff00;
+}
+
+section {
+    background: #282828;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 255, 0, 0.3);
+    max-width: 800px;
+}
+
+h2 {
+    color: #00ffea;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: rgba(0, 255, 0, 0.2);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Ajuste de la imagen al tamaño normal */
+.imagen-seccion {
+    width: auto; /* Mantiene el tamaño original de la imagen */
+    max-width: 100%; /* Evita que sea más ancha que el contenedor */
+    height: auto; /* Mantiene la proporción */
+    display: block; /* Asegura que no haya espacios adicionales */
+    margin: 0 auto; /* Centra la imagen */
+}
+
+button {
+    background: #52ff00;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #32cc00;
+}

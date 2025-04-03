@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes Rick and Morty</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <h1>Personajes de Rick and Morty</h1>
+    <div id="personajes" class="container"></div>
+
+    <button onclick="window.location.href='menu.html'">Ir al Menú</button>
+
+    <script>
+        async function cargarPersonajes() {
+            try {
+                const res = await fetch('http://localhost:3000/api/personajes');
+                const data = await res.json();
+                const container = document.getElementById('personajes');
+                container.innerHTML = '';
+
+                data.forEach(personaje => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <img src="${personaje.image}" alt="${personaje.name}">
+                        <h3>${personaje.name}</h3>
+                        <p><strong>Status:</strong> ${personaje.status}</p>
+                        <p><strong>Species:</strong> ${personaje.species}</p>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                document.getElementById('personajes').innerHTML = '<p>Error al cargar personajes</p>';
+            }
+        }
+
+        cargarPersonajes();
+    </script>
+
+</body>
+</html>
